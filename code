@@ -1,0 +1,22 @@
+while True:
+    a = int(input("請輸入起始值："))
+    b = int(input("請輸入結束值："))
+
+    if a > b:
+        print("結束值不可小於起始值，請重新輸入") 
+        continue
+    else:
+        index = 0
+        total = 0
+        for i in range(a, b+1):   
+            if i % 7 == 0 or i % 11 == 0: #7或11的倍數
+                index += 1
+                total += i
+                if index % 10 == 0: #一列10個數字
+                    print("{:<4d}".format(i))
+                else:
+                    print("{:<4d}".format(i), end="")
+        break
+    
+print("\n總數共有", index, "個")
+print("數字總和為", total)
